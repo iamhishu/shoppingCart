@@ -17,7 +17,7 @@ export function CartItem({ id, quantity }: cartItemProps) {
   return (
       <Stack direction="horizontal" className='d-flex align-items-center justify-content-between'>
           <img src={item?.imgUrl} style={{ width: '150px', height: '75px', objectFit: 'revert' }} />
-          <div className='me-auto mx-2'>
+          <div className='me-auto'>
               <div>
                   {item.name} {quantity > 1 && <span className='text-muted' style={{ fontSize: '.65rem' }}> {quantity}x </span>}
                    <br />
