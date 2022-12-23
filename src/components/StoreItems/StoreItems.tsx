@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { formatCurrency } from "../../utilities/CurrencyFormater";
+import { useShoppingCart } from "../../context/ShoppingCartContext"
 type StoreItemsProps = {
   id: number;
   name: string;
@@ -13,8 +14,14 @@ export default function StoreItem({
   name,
   price,
   imgUrl,
+
 }: StoreItemsProps) {
-    const quantity = 0;
+  const {         getItemQuantity,
+        increaseCartQuantity,
+        decreaseCartQuantity,
+        removeFromCart} = useShoppingCart();
+  const quantity = getItemQuantity(id);
+  
   return (
     <Card className="h-100">
       <Card.Img
@@ -30,20 +37,20 @@ export default function StoreItem({
               </Card.Title>
               <div className="mt-auto">
                   {quantity === 0 ? (
-                      <Button variant="outline-secondary" className="w-100">
+                      <Button variant="outline-secondary" className="w-100" onClick={()=>increaseCartQuantity(id)}>
                           Add to cart
                       </Button>
                   ) : (
                           <div className="d-flex align-items-center flex-column" style={{gap:'.5rem'}}>
                               <div className="d-flex align-items-center justify-content-center" style={{gap:'.5rem'}}>
-                                  <Button variant="outline-dark" size="sm">
+                                  <Button variant="outline-dark" size="sm" onClick={()=>decreaseCartQuantity(id)}>
                                   -
                                   </Button> 
                                   <div>
                                               <span className="fs-3">{quantity}</span> in cart
                                       </div>
                           
-                                       <Button variant="outline-dark" size="sm">
+                                       <Button variant="outline-dark" size="sm" onClick={()=>increaseCartQuantity(id)}>
                                   +
                                   </Button> 
                               </div>

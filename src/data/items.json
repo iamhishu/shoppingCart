@@ -3,31 +3,38 @@
    "id":1,
    "name":"jacketOne",
    "price":9.90,
-   "imgUrl":"/Images/hmgoepprod_w.webp"
+   "imgUrl":"/Images/hmgoepprod_w.webp",
+   "quantity":0
+  
 },
 {
    "id":2,
    "name":"jacketTwo",
    "price":12.90,
    "imgUrl":"/Images/hmgoepprod.webp"
+     
 },
 {
    "id":3,
    "name":"jacketThree",
    "price":10.99,
    "imgUrl":"/Images/hmgoepprod_d.webp"
+  
 },
 {
    "id":4,
    "name":"jacketFour",
    "price":7.22,
    "imgUrl":"/Images/hmgoepprod11.jpeg"
+     
 },
 {
    "id":5,
    "name":"jacketFive",
    "price":22.00,
    "imgUrl":"/Images/hmgoepprod12.jpeg"
+     
+
 }
 
 ]
